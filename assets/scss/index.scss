@@ -1,0 +1,23 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Inter;
+}
+
+//variables
+@import "variables";
+
+//mixins
+@import "mixins/font";
+@import "mixins/media";
+
+//blocks
+@import "body";
+@import "users";
+@import "users-list";
+@import "user-profile";
+@import "avatar";
+@import "input-material";
+@import "input-autocomplete";
+@import "input-tags";
+@import "virtual-list";

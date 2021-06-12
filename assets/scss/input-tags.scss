@@ -1,0 +1,95 @@
+.input-tags {
+  &__tags-active {
+    max-width: 468px;
+    overflow: scroll;
+    padding: 0 6px;
+    height: 32px;
+    background: map-get($colors, 3);
+    border: none;
+    border-radius: 5px;
+
+    &.disabled {
+      pointer-events: none;
+      cursor: default;
+      color: map-get($colors, 5);
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    &-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__tags-list {
+    position: relative;
+    z-index: 1;
+    transition: height 0.2s, opacity 0.4s;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &-container {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      background-color: map-get($colors, 1);
+      border: 1px solid map-get($colors, 4);
+      border-radius: 5px;
+
+      padding: 5px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & .input-tags__tag {
+        cursor: pointer;
+        margin-bottom: 3px;
+        padding: 3px 6px;
+
+        &:hover {
+          background-color: map-get($colors, 3);
+        }
+      }
+    }
+  }
+
+  &__tag {
+    background-color: map-get($colors, 1);
+    border: 1px solid map-get($colors, 3);
+    border-radius: 5px;
+    padding: 3px 3px 3px 6px;
+    margin-right: 3px;
+    display: flex;
+    white-space: nowrap;
+    @include font(14px, 500);
+
+    &-delete {
+      opacity: 0;
+      height: 16px;
+      width: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      &-icon {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.user-profile {
+  position: relative;
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include font(20px, 600);
+    color: map-get($colors, 6);
+    width: 34px;
+    height: 34px;
+    margin-top: 5px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+      border-radius: 5px;
+      background-color: #E5E5E5;
+      box-shadow: 0 4px 12px 0 rgb(99 109 137 / 20%);
+    }
+
+    @include media-breakpoint-down(1020px) {
+      opacity: 1;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-avatar {
+      margin-top: 34px;
+      margin-bottom: 24px;
+    }
+
+    &-title {
+      @include font(16px, 600);
+      color: map-get($colors, 7);
+      margin-bottom: 8px;
+    }
+
+    &-subtitle {
+      @include font(14px, 500);
+      text-align: center;
+      color: map-get($colors, 6);
+      margin-bottom: 32px;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 16px;
+  }
+
+  &__button-group {
+    margin-top: 99px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 28px;
+  }
+
+  &__button {
+    height: 32px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 12px 0 rgb(99 109 137 / 20%);
+    }
+
+    &[disabled] {
+      cursor: default;
+      pointer-events: none;
+      opacity: .8;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    & > img {
+      margin-right: 10px;
+    }
+
+    &_black {
+      background: map-get($colors, 7);
+      border: 1px solid map-get($colors, 10);
+      color: map-get($colors, 1);
+    }
+
+    &_white {
+      background: map-get($colors, 1);
+      border: 1px solid map-get($colors, 4);
+    }
+  }
+}

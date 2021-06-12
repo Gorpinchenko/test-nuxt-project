@@ -1,0 +1,9 @@
+@mixin media-breakpoint-down($max) {
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

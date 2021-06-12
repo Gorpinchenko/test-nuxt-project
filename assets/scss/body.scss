@@ -1,0 +1,7 @@
+.body {
+  background-color: map-get($colors, 2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}

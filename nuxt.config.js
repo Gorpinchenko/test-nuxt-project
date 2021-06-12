@@ -1,3 +1,5 @@
+import { resolve } from 'path'
+
 module.exports = {
   /*
   ** Headers of the page
@@ -10,7 +12,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap",},
     ]
   },
   /*
@@ -34,6 +37,14 @@ module.exports = {
         })
       }
     }
+  },
+  css: [
+    '~/assets/scss/index.scss',
+  ],
+  alias: {
+    'components': resolve(__dirname, './components'),
+    'mixins': resolve(__dirname, './mixins'),
+    'helpers': resolve(__dirname, './helpers'),
   }
 }
 

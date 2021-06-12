@@ -1,0 +1,78 @@
+.users-list {
+  &__search {
+    text-align: center;
+    padding-bottom: 24px;
+
+    & input::placeholder {
+      text-align: center;
+    }
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 12px;
+
+    &-count {
+      @include font(13px, 600);
+      color: map-get($colors, 6);
+
+      & > span {
+        color: map-get($colors, 7);
+      }
+    }
+
+    &-sort {
+      @include font(13px, 600);
+      text-align: right;
+      color: map-get($colors, 9);
+      margin-left: auto;
+      cursor: pointer;
+
+      & > .users-list__header-sort_desc {
+        transform: rotate(-180deg);
+        transition: transform .2s ease;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid map-get($colors, 4);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &-description {
+      margin-left: 16px;
+      padding: 4px 0;
+    }
+
+    &-title {
+      @include font(14px, 600);
+      color: map-get($colors, 7);
+      margin-bottom: 8px;
+    }
+
+    &-subtitle {
+      @include font(13px, 500);
+      color: map-get($colors, 6);
+    }
+
+    &-icon {
+      width: 34px;
+      height: 34px;
+      margin-top: 5px;
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        border-radius: 5px;
+        background-color: map-get($colors, 2);
+        box-shadow: 0 4px 12px 0 map-get($colors, 8);
+      }
+    }
+  }
+}

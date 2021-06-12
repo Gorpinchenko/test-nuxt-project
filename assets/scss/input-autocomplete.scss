@@ -1,0 +1,33 @@
+.input-autocomplete {
+  &__item-list {
+    position: relative;
+    z-index: 1;
+    transition: height 0.2s, opacity 0.4s;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &-container {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid map-get($colors, 4);
+      border-radius: 5px;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid map-get($colors, 3);
+    padding: 3px 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: map-get($colors, 3);
+    }
+  }
+}

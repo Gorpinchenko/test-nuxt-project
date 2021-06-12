@@ -1,0 +1,48 @@
+.input-material {
+  &__label {
+    @include font(13px, 600);
+    margin-bottom: 8px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__input {
+    display: block;
+    padding: 9px 32px 9px 10px;
+    width: 100%;
+    height: 32px;
+    background: map-get($colors, 3);
+    border: none;
+    border-radius: 5px;
+    @include font(14px, 500);
+
+    &:focus {
+      outline: none;
+    }
+
+    &[disabled] {
+      color: map-get($colors, 5);
+    }
+
+    &[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    right: 4px;
+    position: absolute;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
